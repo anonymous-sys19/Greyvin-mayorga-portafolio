@@ -1,0 +1,202 @@
+{
+  "inicio": {
+    "nombre": "Ghostroot",
+    "profesion": "Desarrollador Fullstack",
+    "descripcion": "Programador apasionado por el desarrollo web, APIs y automatización. Me enfoco en crear soluciones rápidas, eficientes y modernas.",
+    "foto_perfil": "/assets/icon.jpg",
+    "cv_pdf": "/assets/docs/curriculum.pdf"
+  },
+  "proyectos": [
+    {
+      "titulo": "📅 AGENDA YEAR - ORGANIZA TU FUTURO 🚀",
+      "descripcion": "Un sistema de agenda moderna y futurista, optimizada para el mejor rendimiento y experiencia de usuario.",
+      "imagenes": [
+        "/assets/proyectos/agenda.jpg"
+      ],
+      "tecnologias": [
+        "🚀 Frontend: React + TypeScript + Vite",
+        "☁️ Backend: Supabase",
+        "🎨 UI: ShadCN + Tailwind CSS"
+      ],
+      "link_github": "https://github.com/anonymous-sys19/agenda-year",
+      "link_demo": "https://agenda-year.vercel.app/"
+    },
+    {
+      "titulo": "Red Social Cristiana Futurista - IDEC Tiempos de gloria",
+      "descripcion": "Bienvenido/a a [IDEC Tiempos de gloria], una red social cristiana con una estética futurista, desarrollada con tecnologías modernas para una experiencia única e innovadora.",
+      "imagenes": [
+        "/assets/proyectos/idecz.png"
+      ],
+      "tecnologias": [
+        "🚀 Frontend: React + TypeScript + Vite",
+        "☁️ Backend: Supabase",
+        "🎨 UI:  Tailwind CSS"
+      ],
+      "link_github": "https://github.com/anonymous-sys19/Tiempos-de-Gloria.git",
+      "link_demo": "https://idec-tiempos-de-gloria.vercel.app"
+    },
+    {
+      "titulo": "App Contabilidad Iglesia",
+      "descripcion": "Sistema local para manejo de cajas, ministerios y reportes automáticos.",
+      "imagenes": [
+        "/assets/proyectos/iglesia/cover.png"
+      ],
+      "tecnologias": [
+        "FastAPI",
+        "SQLite",
+        "React",
+        "TailwindCSS"
+      ],
+      "link_github": "https://github.com/tu-repo",
+      "link_demo": null
+    }
+  ],
+  "tecnologias": {
+    "frontend": [
+      {
+        "nombre": "HTML",
+        "nivel": 90
+      },
+      {
+        "nombre": "CSS",
+        "nivel": 80
+      },
+      {
+        "nombre": "JavaScript",
+        "nivel": 75
+      },
+      {
+        "nombre": "ReactJS",
+        "nivel": 65
+      },
+      {
+        "nombre": "Next.js",
+        "nivel": 60
+      },
+      {
+        "nombre": "AstroJS",
+        "nivel": 70
+      },
+      {
+        "nombre": "TailwindCSS",
+        "nivel": 70
+      }
+    ],
+    "backend": [
+      {
+        "nombre": "Node.js",
+        "nivel": 90
+      },
+      {
+        "nombre": "Express.js",
+        "nivel": 80
+      },
+      {
+        "nombre": "PHP",
+        "nivel": 95
+      },
+      {
+        "nombre": "Python",
+        "nivel": 80
+      },
+      {
+        "nombre": "FastAPI",
+        "nivel": 70
+      },
+      {
+        "nombre": "Django",
+        "nivel": 60
+      },
+      {
+        "nombre": "Flask",
+        "nivel": 60
+      }
+    ],
+    "bases_datos": [
+      {
+        "nombre": "MySQL",
+        "nivel": 80
+      },
+      {
+        "nombre": "PostgreSQL",
+        "nivel": 65
+      },
+      {
+        "nombre": "MongoDB",
+        "nivel": 80
+      },
+      {
+        "nombre": "Supabase",
+        "nivel": 80
+      }
+    ],
+    "contenedores": [
+      {
+        "nombre": "Docker",
+        "nivel": "En proceso"
+      }
+    ],
+    "sistemas_control": [
+      {
+        "nombre": "Git",
+        "nivel": 90
+      }
+    ],
+    "sistemas_operativos": [
+      {
+        "nombre": "Linux",
+        "nivel": 80
+      },
+      {
+        "nombre": "Bash",
+        "nivel": 80
+      }
+    ],
+    "ofimatica": [
+      {
+        "nombre": "Excel",
+        "nivel": 90
+      }
+    ]
+  },
+  "certificados": [
+    {
+      "titulo": "Certificado en Google",
+      "imagen": "/assets/CERT/cert-g.png"
+    },
+    {
+      "titulo": "Certificado en Pentesting Ético",
+      "imagen": "/assets/CERT/cert-Pweb.png"
+    },
+    {
+      "Titulo": "Certificado en Python3 Data Analysis",
+      "imagen": "/assets/CERT/cert-pyt.png"
+    },
+    {
+      "titulo": "Certificado en React",
+      "imagen": "/assets/certificados/react_cert.png"
+    },
+    {
+      "titulo": "Certificado en Python",
+      "imagen": "/assets/CERT/cert-py.png"
+    },
+    {
+      "titulo": "Certificado en MySQL",
+      "imagen": "/assets/CERT/cert-sql.png"
+    },
+    {
+      "titulo": "Certificado en MOS Excel",
+      "imagen": "/assets/CERT/mos200.png"
+    }
+  ],
+  "contacto": {
+    "email": "estudiosrg5@gmail.com",
+    "telefono": "+506 6222-8271",
+    "redes": {
+      "github": "https://github.com/anonymous-sys19",
+      "facebook": "https://www.facebook.com/greivin.mayorga.5",
+      "instagram": "https://www.instagram.com/Greivin_mayorga/",
+      "linkedin": "https://www.linkedin.com/in/inform%C3%A1tica-y-mas-02066a252/"
+    }
+  }
+}
