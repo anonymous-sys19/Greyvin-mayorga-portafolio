@@ -169,12 +169,12 @@
       "imagen": "/assets/CERT/cert-Pweb.png"
     },
     {
-      "Titulo": "Certificado en Python3 Data Analysis",
+      "titulo": "Certificado en Python3 Data Analysis",
       "imagen": "/assets/CERT/cert-pyt.png"
     },
     {
       "titulo": "Certificado en React",
-      "imagen": "/assets/certificados/react_cert.png"
+      "imagen": "/assets/CERT/react_cert.png"
     },
     {
       "titulo": "Certificado en Python",

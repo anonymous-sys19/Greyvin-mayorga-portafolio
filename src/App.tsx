@@ -5,7 +5,7 @@ import Skills from './components/Skills';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
-import data from './data/data.json';
+import data from './data.json';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
