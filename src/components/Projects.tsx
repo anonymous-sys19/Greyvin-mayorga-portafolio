@@ -1,5 +1,6 @@
 import { ExternalLink, Github, Sparkles } from 'lucide-react';
 import { useState } from 'react';
+import { useParallax } from '../hooks/useParallax';
 
 interface Project {
   titulo: string;
@@ -16,9 +17,13 @@ interface ProjectsProps {
 
 const Projects = ({ projects }: ProjectsProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const parallaxRef = useParallax(0.3);
 
   return (
     <section id="proyectos" className="relative py-16 sm:py-24 overflow-hidden">
+      <div ref={parallaxRef} className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 -left-96 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+      </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-full text-cyan-600 dark:text-cyan-400 text-sm font-medium mb-4">

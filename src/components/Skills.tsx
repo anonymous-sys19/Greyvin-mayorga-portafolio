@@ -1,4 +1,5 @@
 import { Code, Server, Database, Package, GitBranch, Monitor, FileSpreadsheet, Sparkles } from 'lucide-react';
+import { useParallax } from '../hooks/useParallax';
 
 interface Skill {
   nombre: string;
@@ -40,6 +41,8 @@ const categoryNames = {
 };
 
 const Skills = ({ tecnologias }: SkillsProps) => {
+  const parallaxRef = useParallax(0.2);
+
   const renderSkill = (skill: Skill, index: number) => {
     const isNumeric = typeof skill.nivel === 'number';
     const nivel = isNumeric ? skill.nivel : 0;
@@ -77,7 +80,7 @@ const Skills = ({ tecnologias }: SkillsProps) => {
 
   return (
     <section id="habilidades" className="relative py-16 sm:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/50 dark:via-blue-950/20 to-transparent"></div>
+      <div ref={parallaxRef} className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/50 dark:via-blue-950/20 to-transparent pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">

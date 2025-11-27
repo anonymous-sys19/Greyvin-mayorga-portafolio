@@ -1,5 +1,6 @@
 import { Download, Code2, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useParallax } from '../hooks/useParallax';
 
 interface HeroProps {
   data: {
@@ -13,6 +14,7 @@ interface HeroProps {
 
 const Hero = ({ data }: HeroProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const parallaxRef = useParallax(0.5);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -28,20 +30,20 @@ const Hero = ({ data }: HeroProps) => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20"
     >
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 50%)`,
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.2), transparent 50%)`,
         }}
       ></div>
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div ref={parallaxRef} className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-          <div className="flex-1 text-center lg:text-left space-y-6 animate-fade-in">
+          <div className="flex-1 text-center lg:text-left space-y-6 animate-fade-in transform transition-all duration-1000">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium">
               <Sparkles className="w-4 h-4" />
               <span>Disponible para proyectos</span>
