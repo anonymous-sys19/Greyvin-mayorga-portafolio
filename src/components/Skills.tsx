@@ -117,7 +117,7 @@ const Skills = ({ tecnologias }: SkillsProps) => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {skills.map((skill, skillIndex) => renderSkill(skill, skillIndex))}
+                  {skills.map((skill: Skill, skillIndex: number) => renderSkill(skill, skillIndex))}
                 </div>
               </div>
             );
