@@ -55,107 +55,130 @@
     "frontend": [
       {
         "nombre": "HTML",
-        "nivel": 90
+        "nivel": 90,
+        "descripcion": "Estructura semántica y accesible para la web."
       },
       {
         "nombre": "CSS",
-        "nivel": 80
+        "nivel": 80,
+        "descripcion": "Diseño responsivo y animaciones modernas."
       },
       {
         "nombre": "JavaScript",
-        "nivel": 75
+        "nivel": 75,
+        "descripcion": "Lógica interactiva y manipulación del DOM."
       },
       {
         "nombre": "ReactJS",
-        "nivel": 65
+        "nivel": 65,
+        "descripcion": "Desarrollo de interfaces de usuario basadas en componentes."
       },
       {
         "nombre": "Next.js",
-        "nivel": 60
+        "nivel": 60,
+        "descripcion": "Framework de React para producción y SSR."
       },
       {
         "nombre": "AstroJS",
-        "nivel": 70
+        "nivel": 70,
+        "descripcion": "Sitios web estáticos rápidos y optimizados."
       },
       {
         "nombre": "TailwindCSS",
-        "nivel": 70
+        "nivel": 70,
+        "descripcion": "Estilizado rápido y flexible con clases utilitarias."
       }
     ],
     "backend": [
       {
         "nombre": "Node.js",
-        "nivel": 90
+        "nivel": 90,
+        "descripcion": "Entorno de ejecución para JavaScript en el servidor."
       },
       {
         "nombre": "Express.js",
-        "nivel": 80
+        "nivel": 80,
+        "descripcion": "Framework minimalista para APIs RESTful."
       },
       {
         "nombre": "PHP",
-        "nivel": 95
+        "nivel": 95,
+        "descripcion": "Desarrollo web del lado del servidor robusto."
       },
       {
         "nombre": "Python",
-        "nivel": 80
+        "nivel": 80,
+        "descripcion": "Lenguaje versátil para backend y análisis de datos."
       },
       {
         "nombre": "FastAPI",
-        "nivel": 70
+        "nivel": 70,
+        "descripcion": "APIs rápidas y modernas con Python."
       },
       {
         "nombre": "Django",
-        "nivel": 60
+        "nivel": 60,
+        "descripcion": "Framework web de alto nivel para desarrollo rápido."
       },
       {
         "nombre": "Flask",
-        "nivel": 60
+        "nivel": 60,
+        "descripcion": "Microframework ligero para aplicaciones web."
       }
     ],
     "bases_datos": [
       {
         "nombre": "MySQL",
-        "nivel": 80
+        "nivel": 80,
+        "descripcion": "Gestión de bases de datos relacionales."
       },
       {
         "nombre": "PostgreSQL",
-        "nivel": 65
+        "nivel": 65,
+        "descripcion": "Base de datos relacional avanzada y potente."
       },
       {
         "nombre": "MongoDB",
-        "nivel": 80
+        "nivel": 80,
+        "descripcion": "Base de datos NoSQL flexible y escalable."
       },
       {
         "nombre": "Supabase",
-        "nivel": 80
+        "nivel": 80,
+        "descripcion": "Alternativa open source a Firebase."
       }
     ],
     "contenedores": [
       {
         "nombre": "Docker",
-        "nivel": "En proceso"
+        "nivel": "En proceso",
+        "descripcion": "Creación y despliegue de aplicaciones en contenedores."
       }
     ],
     "sistemas_control": [
       {
         "nombre": "Git",
-        "nivel": 90
+        "nivel": 90,
+        "descripcion": "Control de versiones distribuido."
       }
     ],
     "sistemas_operativos": [
       {
         "nombre": "Linux",
-        "nivel": 80
+        "nivel": 80,
+        "descripcion": "Administración de sistemas y servidores."
       },
       {
         "nombre": "Bash",
-        "nivel": 80
+        "nivel": 80,
+        "descripcion": "Automatización de tareas mediante scripts."
       }
     ],
     "ofimatica": [
       {
         "nombre": "Excel",
-        "nivel": 90
+        "nivel": 90,
+        "descripcion": "Análisis de datos y hojas de cálculo avanzadas."
       }
     ]
   },

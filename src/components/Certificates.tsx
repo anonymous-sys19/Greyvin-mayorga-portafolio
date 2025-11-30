@@ -22,6 +22,8 @@ const Certificates = ({ certificados }: CertificatesProps) => {
 
     const printWindow = window.open('', '', 'width=800,height=600');
     if (printWindow) {
+      const imgUrl = new URL(cert.imagen, window.location.origin).href;
+
       printWindow.document.write(`
         <!DOCTYPE html>
         <html>
@@ -37,7 +39,7 @@ const Certificates = ({ certificados }: CertificatesProps) => {
           </head>
           <body>
             <div class="container">
-              <img src="${cert.imagen}" alt="${getCertificateTitle(cert)}" />
+              <img src="${imgUrl}" alt="${getCertificateTitle(cert)}" />
               <div class="title">${getCertificateTitle(cert)}</div>
             </div>
           </body>

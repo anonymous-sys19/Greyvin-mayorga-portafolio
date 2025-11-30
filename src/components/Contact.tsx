@@ -43,7 +43,7 @@ const Contact = ({ contacto }: ContactProps) => {
 
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            <div className="group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in">
+            <div className="group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:scale-105 animate-fade-in">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
                   <Mail className="w-6 h-6 text-white" />
@@ -60,7 +60,7 @@ const Contact = ({ contacto }: ContactProps) => {
               </a>
             </div>
 
-            <div className="group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in animation-delay-100">
+            <div className="group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:scale-105 animate-fade-in animation-delay-100">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
                   <Phone className="w-6 h-6 text-white" />
@@ -78,7 +78,7 @@ const Contact = ({ contacto }: ContactProps) => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl animate-fade-in animation-delay-200">
+          <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 animate-fade-in animation-delay-200">
             <div className="flex items-center gap-3 mb-6">
               <Sparkles className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">

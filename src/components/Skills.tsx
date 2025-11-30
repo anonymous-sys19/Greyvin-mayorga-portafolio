@@ -4,6 +4,7 @@ import { useParallax } from '../hooks/useParallax';
 interface Skill {
   nombre: string;
   nivel: number | string;
+  descripcion?: string;
 }
 
 interface Tecnologias {
@@ -50,9 +51,16 @@ const Skills = ({ tecnologias }: SkillsProps) => {
     return (
       <div
         key={index}
-        className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:scale-105 animate-fade-in"
+        className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:scale-105 animate-fade-in"
         style={{ animationDelay: `${index * 50}ms` }}
       >
+        {skill.descripcion && (
+          <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none w-48 text-center z-20 shadow-xl">
+            {skill.descripcion}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-gray-700"></div>
+          </div>
+        )}
+
         <div className="flex items-center justify-between mb-2">
           <h4 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white">
             {skill.nombre}

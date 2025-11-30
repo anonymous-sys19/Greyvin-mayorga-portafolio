@@ -28,7 +28,7 @@ const Hero = ({ data }: HeroProps) => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20"
+      className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-16 sm:pt-20"
     >
       <div
         className="absolute inset-0 opacity-20"
@@ -38,12 +38,12 @@ const Hero = ({ data }: HeroProps) => {
       ></div>
 
       <div ref={parallaxRef} className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 dark:bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-grow flex items-center">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
           <div className="flex-1 text-center lg:text-left space-y-6 animate-fade-in transform transition-all duration-1000">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400 text-sm font-medium">
               <Sparkles className="w-4 h-4" />
@@ -111,14 +111,14 @@ const Hero = ({ data }: HeroProps) => {
         </div>
       </div>
 
-      <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 animate-bounce pointer-events-none">
         <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center pt-2">
           <div className="w-1.5 h-2 bg-gray-400 dark:bg-gray-600 rounded-full animate-scroll"></div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 py-8 sm:py-12 bg-gradient-to-t from-blue-50/50 dark:from-blue-950/30 to-transparent">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full py-8 sm:py-12 bg-gradient-to-t from-blue-50/50 dark:from-blue-950/30 to-transparent relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedCounter
             items={[
               { label: 'Proyectos', value: 50, icon: <Rocket className="w-8 h-8" /> },

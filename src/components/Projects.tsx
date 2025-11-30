@@ -42,7 +42,7 @@ const Projects = ({ projects }: ProjectsProps) => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] animate-fade-in"
+              className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:scale-[1.02] animate-fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -59,9 +59,8 @@ const Projects = ({ projects }: ProjectsProps) => {
                   }}
                 />
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${
-                    hoveredIndex === index ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+                    }`}
                 ></div>
               </div>
 
