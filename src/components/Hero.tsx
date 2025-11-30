@@ -51,7 +51,7 @@ const Hero = ({ data }: HeroProps) => {
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
               Hola, soy{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">
+              <span className=" text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">
                 {data.nombre}
               </span>
             </h1>

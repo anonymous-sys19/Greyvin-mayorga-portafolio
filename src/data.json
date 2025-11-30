@@ -1,10 +1,10 @@
 {
   "inicio": {
-    "nombre": "Ghostroot",
+    "nombre": "Greyvin Mayorga",
     "profesion": "Desarrollador Fullstack",
     "descripcion": "Programador apasionado por el desarrollo web, APIs y automatización. Me enfoco en crear soluciones rápidas, eficientes y modernas.",
     "foto_perfil": "/assets/icon.jpg",
-    "cv_pdf": "/assets/docs/curriculum.pdf"
+    "cv_pdf": "/assets/docs/Curriculum.pdf"
   },
   "proyectos": [
     {
