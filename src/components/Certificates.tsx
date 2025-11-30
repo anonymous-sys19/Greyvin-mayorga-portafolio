@@ -1,4 +1,4 @@
-import { Award, Sparkles, X } from 'lucide-react';
+import { Award, Sparkles, X, Printer, Download } from 'lucide-react';
 import { useState } from 'react';
 
 interface Certificate {
@@ -13,8 +13,56 @@ interface CertificatesProps {
 
 const Certificates = ({ certificados }: CertificatesProps) => {
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+  const [printingIndex, setPrintingIndex] = useState<number | null>(null);
 
   const getCertificateTitle = (cert: Certificate) => cert.titulo || cert.Titulo || 'Certificado';
+
+  const handlePrint = (e: React.MouseEvent, cert: Certificate) => {
+    e.stopPropagation();
+
+    const printWindow = window.open('', '', 'width=800,height=600');
+    if (printWindow) {
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>${getCertificateTitle(cert)}</title>
+            <style>
+              body { margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #f3f4f6; font-family: system-ui; }
+              .container { width: 100%; max-width: 900px; padding: 20px; }
+              img { width: 100%; height: auto; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+              .title { text-align: center; margin-top: 20px; color: #333; font-size: 16px; }
+              @media print { body { background: white; } .title { display: none; } }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <img src="${cert.imagen}" alt="${getCertificateTitle(cert)}" />
+              <div class="title">${getCertificateTitle(cert)}</div>
+            </div>
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
+
+      setTimeout(() => {
+        setPrintingIndex(null);
+        printWindow.print();
+        printWindow.close();
+      }, 500);
+    }
+  };
+
+  const handleDownload = (e: React.MouseEvent, cert: Certificate) => {
+    e.stopPropagation();
+
+    const link = document.createElement('a');
+    link.href = cert.imagen;
+    link.download = `${getCertificateTitle(cert).replace(/\s+/g, '_')}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="certificados" className="relative py-16 sm:py-24 overflow-hidden">
@@ -57,11 +105,36 @@ const Certificates = ({ certificados }: CertificatesProps) => {
               </div>
 
               <div className="relative p-4">
-                <div className="flex items-start gap-2">
-                  <Award className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
-                  <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {getCertificateTitle(cert)}
-                  </h3>
+                <div className="flex items-start justify-between gap-2 mb-3">
+                  <div className="flex items-start gap-2 flex-1">
+                    <Award className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                    <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      {getCertificateTitle(cert)}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                  <button
+                    onClick={(e) => {
+                      setPrintingIndex(index);
+                      handlePrint(e, cert);
+                    }}
+                    className="flex-1 flex items-center justify-center gap-1 px-2 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-lg text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group/btn"
+                    title="Imprimir certificado"
+                  >
+                    <Printer className="w-4 h-4 group-hover/btn:animate-bounce" />
+                    <span className="hidden sm:inline">Imprimir</span>
+                  </button>
+
+                  <button
+                    onClick={(e) => handleDownload(e, cert)}
+                    className="flex-1 flex items-center justify-center gap-1 px-2 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-lg text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group/btn"
+                    title="Descargar certificado"
+                  >
+                    <Download className="w-4 h-4 group-hover/btn:animate-bounce" />
+                    <span className="hidden sm:inline">Descargar</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -78,23 +151,42 @@ const Certificates = ({ certificados }: CertificatesProps) => {
             className="relative max-w-5xl w-full max-h-[90vh] bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setSelectedCertificate(null)}
-              className="absolute top-4 right-4 z-10 p-2 bg-white/90 dark:bg-gray-900/90 hover:bg-white dark:hover:bg-gray-800 rounded-full shadow-lg transition-all hover:scale-110"
-              aria-label="Cerrar"
-            >
-              <X className="w-6 h-6 text-gray-900 dark:text-white" />
-            </button>
+            <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
+              <button
+                onClick={(e) => handlePrint(e, selectedCertificate)}
+                className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 group/btn"
+                title="Imprimir certificado"
+              >
+                <Printer className="w-6 h-6 group-hover/btn:animate-bounce" />
+              </button>
 
-            <div className="p-6">
+              <button
+                onClick={(e) => handleDownload(e, selectedCertificate)}
+                className="p-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 group/btn"
+                title="Descargar certificado"
+              >
+                <Download className="w-6 h-6 group-hover/btn:animate-bounce" />
+              </button>
+
+              <button
+                onClick={() => setSelectedCertificate(null)}
+                className="p-2 bg-white/90 dark:bg-gray-900/90 hover:bg-white dark:hover:bg-gray-800 rounded-full shadow-lg transition-all hover:scale-110"
+                aria-label="Cerrar"
+              >
+                <X className="w-6 h-6 text-gray-900 dark:text-white" />
+              </button>
+            </div>
+
+            <div className="p-6 sm:p-8 max-h-[calc(90vh-60px)] overflow-y-auto">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 {getCertificateTitle(selectedCertificate)}
               </h3>
-              <div className="relative">
+              <div className="relative group">
+                <div className="absolute -inset-2 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img
                   src={selectedCertificate.imagen}
                   alt={getCertificateTitle(selectedCertificate)}
-                  className="w-full h-auto rounded-lg shadow-lg"
+                  className="relative w-full h-auto rounded-lg shadow-2xl group-hover:shadow-blue-500/50 transition-all duration-500"
                   onError={(e) => {
                     e.currentTarget.src = `https://via.placeholder.com/800x600/3b82f6/ffffff?text=${encodeURIComponent(getCertificateTitle(selectedCertificate))}`;
                   }}

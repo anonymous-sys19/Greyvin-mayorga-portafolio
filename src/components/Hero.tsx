@@ -1,6 +1,7 @@
-import { Download, Code2, Sparkles } from 'lucide-react';
+import { Download, Code2, Sparkles, Zap, Brain, Rocket } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useParallax } from '../hooks/useParallax';
+import AnimatedCounter from './AnimatedCounter';
 
 interface HeroProps {
   data: {
@@ -110,9 +111,22 @@ const Hero = ({ data }: HeroProps) => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-40 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center pt-2">
           <div className="w-1.5 h-2 bg-gray-400 dark:bg-gray-600 rounded-full animate-scroll"></div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 py-8 sm:py-12 bg-gradient-to-t from-blue-50/50 dark:from-blue-950/30 to-transparent">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedCounter
+            items={[
+              { label: 'Proyectos', value: 50, icon: <Rocket className="w-8 h-8" /> },
+              { label: 'Tecnologías', value: 20, icon: <Zap className="w-8 h-8" /> },
+              { label: 'Años Exp.', value: 5, icon: <Brain className="w-8 h-8" /> },
+              { label: 'Clientes', value: 30, icon: <Sparkles className="w-8 h-8" /> },
+            ]}
+          />
         </div>
       </div>
     </section>

@@ -6,6 +6,9 @@ import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import Background3D from './components/Background3D';
+import FloatingElements from './components/FloatingElements';
+import ScrollProgress from './components/ScrollProgress';
+import CursorGlow from './components/CursorGlow';
 import data from './data.json';
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-950 dark:to-purple-950 transition-colors duration-500 overflow-x-hidden">
       <Background3D />
+      <FloatingElements />
+      <ScrollProgress />
+      <CursorGlow />
       <Navigation theme={theme} toggleTheme={toggleTheme} />
 
       <main className="relative z-10">
